@@ -65,6 +65,8 @@
 
 (show-paren-mode 1)
 
+(set-language-environment "UTF-8")
+
 ;; Org-mode Highlight
 (require 'org)
 (setq org-src-fontify-natively t)
@@ -91,9 +93,12 @@
                                             ("8sd" "sdwfzly")
                                             ))
 
-(defun open-init-file()
+(defun open-init-file ()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
+(defun open-orgconf-file ()
+  (interactive)
+  (find-file "~/.emacs.d/sdwfzly.org"))
 
 (defun indent-buffer ()
   "Indent the currently visited buffer."
@@ -147,6 +152,7 @@
   (while (search-forward "\r" nil t) (replace-match "")))
 
 (global-set-key (kbd "<f2>") 'open-init-file)
+(global-set-key (kbd "<f3>") 'open-orgconf-file)
 
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -172,6 +178,12 @@
 (global-set-key (kbd "M-s i") 'counsel-imenu)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 (global-linum-mode 1)
 (setq linum-format "%d ")
