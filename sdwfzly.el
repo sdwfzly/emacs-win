@@ -94,9 +94,6 @@
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-(defun open-orgconf-file()
-  (interactive)
-  (find-file "~/.emacs.d/sdwfzly.org"))
 
 (defun indent-buffer ()
   "Indent the currently visited buffer."
@@ -150,7 +147,6 @@
   (while (search-forward "\r" nil t) (replace-match "")))
 
 (global-set-key (kbd "<f2>") 'open-init-file)
-(global-set-key (kbd "<f3>") 'open-orgconf-file')
 
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -186,7 +182,7 @@
 (setq-default cursor-type 'bar)
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
-;; 关闭启动帮助画面
+;; Shutdown help at startup
 (setq inhibit-splash-screen 1)
 
 (global-hl-line-mode 1)
