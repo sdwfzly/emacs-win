@@ -1,4 +1,6 @@
+;;---------------
 ;; Basic Defaults
+;;---------------
 (setq make-backup-files nil)
 
 (setq auto-save-default nil)
@@ -13,22 +15,25 @@
 
 (set-language-environment "UTF-8")
 
-;; --- Org-mode Highlight ---
+;; Org-mode Highlight
 (require 'org)
 (setq org-src-fontify-natively t)
 
-;; --- Recent Files ---
+;; Recent Files
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+;;---------------
 ;; Modes Defaults
-;; ---  Dired Mode ---
+;;---------------
+
+;; Dired Mode
 (setq dired-recursive-copies 'always)
 (setq dired-recursive-deletes 'always)
 (put 'dired-find-alternate-file 'disabled nil)
 
-;; --- Show Paren Everywhere ---
+;; Show Paren Everywhere
 (define-advice show-paren-function (:around (fn) fix-show-paren-function)
   "Highlight enclosing parens."
   (cond ((looking-at-p "\\s(") (funcall fn))
@@ -43,13 +48,16 @@
 					    ("8sd" "sdwfzly")
 					    ))
 
+;;----------
 ;; Functions
-;; --- Open init & orgconf file (F2 F3) ---
+;;----------
+
+;; Open init & orgconf file (F2)
 (defun open-init-file ()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-;; --- Auto Indent Region or Buffer (C-M-\) ---
+;; Auto Indent Region or Buffer (C-M-\)
 (defun indent-buffer ()
   "Indent the currently visited buffer."
   (interactive)
@@ -66,7 +74,7 @@
 	(indent-buffer)
 	(message "Indented Buffer.")))))
 
-;; --- occur mode (M-s o) ---
+;; occur mode (M-s o)
 (defun occur-dwim ()
   "Call 'occur' with a sane default."
   (interactive)
@@ -80,7 +88,7 @@
 	regexp-history)
   (call-interactively 'occur))
 
-;; --- Hippie expand (M-/) ---
+;; Hippie expand (M-/)
 (setq hippie-expand-try-functions-list '(try-expand-dabbrev
 					 try-expand-dabbrev-all-buffers
 					 try-expand-dabbrev-from-kill
@@ -92,7 +100,7 @@
 					 try-complete-lisp-symbol
 					 try-complete-lisp-symbol-partially))
 
-;; --- Dos end of line ---
+;; Dos end of line
 (defun hidden-dos-eol ()
   "Do not show ^M in files containing mixed UNIX & DOS line endings"
   (interactive)

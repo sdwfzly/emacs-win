@@ -1,5 +1,4 @@
 (global-set-key (kbd "<f2>") 'open-init-file)
-(global-set-key (kbd "<f3>") 'open-orgconf-file)
 
 (global-set-key (kbd "C-c r") 'recentf-open-files)
 (global-set-key (kbd "C-c a") 'org-agenda)
