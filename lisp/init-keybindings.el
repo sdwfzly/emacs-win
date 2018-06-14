@@ -16,6 +16,8 @@
 
 (global-set-key (kbd "M-/") 'hippie-expand)
 
+(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+
 (with-eval-after-load 'dired
   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 

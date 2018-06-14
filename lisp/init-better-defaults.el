@@ -15,6 +15,9 @@
 
 (set-language-environment "UTF-8")
 
+;; (set-default-font "Source Code Variable:pixelsize=15:foundry=ADBO:weight=normal:slant=italic:width=normal:spacing=100:scalable=true")
+(set-default-font "Source Code Variable:slant=Italic")
+
 ;; Org-mode Highlight
 (require 'org)
 (setq org-src-fontify-natively t)
@@ -42,7 +45,7 @@
 	     (funcall fn)))))
 
 ;; Abbrevs
-(abbrev-mode 1)
+(setq default-abbrev-mode 1)
 (define-abbrev-table 'global-abbrev-table '(
 					    ;; signature
 					    ("8sd" "sdwfzly")

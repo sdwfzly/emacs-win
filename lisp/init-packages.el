@@ -15,6 +15,8 @@
 		smartparens
 		popwin
 		expand-region
+		iedit
+
 		;; --- Mode ---
 		markdown-mode
 		exec-path-from-shell
