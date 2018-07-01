@@ -1,3 +1,8 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore list:
 auto-save-list
-sdwfzly.el
 recentf

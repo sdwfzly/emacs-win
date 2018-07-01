@@ -13,10 +13,17 @@
 
 (show-paren-mode 1)
 
+(setq ring-bell-function 'ignore)
+
 (set-language-environment "UTF-8")
 
 ;; (set-default-font "Source Code Variable:pixelsize=15:foundry=ADBO:weight=normal:slant=italic:width=normal:spacing=100:scalable=true")
-(set-default-font "Source Code Variable:slant=Italic")
+;;(set-default-font "Source Code Variable:slant=Italic")
+(set-default-font "Source Code Variable")
+
+(dolist (charset '(kana han cjk-misc bopomofo))
+  (set-fontset-font (frame-parameter nil 'font) charset
+                    (font-spec :family "微软雅黑")))
 
 ;; Org-mode Highlight
 (require 'org)
